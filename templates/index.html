@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href={{ url_for( 'static', filename='style.css' ) }} />
+    <script type="text/javascript" src="/static/script.js"></script>
 </head>
 
 <body>
@@ -10,11 +11,19 @@
     <div class='container'>
         {% for i in range(10) %}
         <div class='item'>
-            <p><a href={{ urls[i] }}><b>{{ headlines[i] }}</b></a> ({{ dates[i] }}) </p>
+            <p><a href="{{ urls[i] }}"><b>{{ headlines[i] }}</b></a> ({{ dates[i] }}) </p>
             <p>{{ snippets[i] }}</p>
         </div>
         {% endfor %}
+        
     </div>
+    
+    <div id="headlines">Headlines:
+        
+    </div>
+    <label for="lbl">Search:</label>
+    <input type="text" id="search" name="input" size="20">
+    <button id="myButton">Submit</button>
 
 </body>
 
